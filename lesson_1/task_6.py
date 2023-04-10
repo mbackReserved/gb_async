@@ -2,7 +2,7 @@ lines = ['сетевое программирование', 'сокет', 'де�
 newfile = 'test_file.txt'
 
 
-with open(newfile, 'w') as file:
+with open(newfile, 'w', encoding='cp1251') as file:
     for line in lines:
         file.write(f'{line} \n')
     default_encoding = file.encoding
@@ -21,7 +21,7 @@ def read_by_line_utf8(filename):
     #Построчное кодирование/декодирование файла, для чтения в формате Unicode
     with open(filename) as file:
         for line in file:
-            line = line.encode('utf-8')
+            line = line.decode(default_encoding).encode('utf-8')
             line = line.decode('utf-8')
             print(line)
     return filename
