@@ -1,0 +1,9 @@
+dict_data:
+  d1: 100₽
+  d2: 500₽
+  d3: 1000₽
+int_data: 1248
+list_data:
+- v1
+- v2
+- v3
