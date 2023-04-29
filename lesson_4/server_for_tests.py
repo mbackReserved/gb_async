@@ -4,6 +4,29 @@ import json
 import time
 
 
+def create_response_to_client(msg_from_client):
+    if 'action' in msg_from_client and msg_from_client['action'] == 'presence' and 'time' in msg_from_client:
+        if 'account_name' in msg_from_client['user']:
+            account_name = msg_from_client['user']['account_name']
+            message = f'Hello from server, {account_name}'
+        else:
+            message = 'Dear Guest, welcome to the server!'
+
+        srv_response = {
+            'response': 200,
+            'time': time.ctime(time.time()),
+            'message': message
+        }
+    else:
+        srv_response = {
+            'response': 400,
+            'error': 'Bad request',
+            'time': time.ctime(time.time()),
+            'message': 'Сервер получил некорректные данные'
+        }
+    return srv_response
+
+
 def main():
 
     try:
@@ -23,30 +46,7 @@ def main():
     sock.listen(5)
     print('Сервер ожидает подключения')
 
-
-    def create_response_to_client(msg_from_client):
-        if 'action' in msg_from_client and msg_from_client['action'] == 'presence' and 'time' in msg_from_client:
-            if 'account_name' in msg_from_client['user']:
-                account_name = msg_from_client['user']['account_name']
-                message = f'Hello from server, {account_name}'
-            else:
-                message = 'Dear Guest, welcome to the server!'
-
-            srv_response = {
-                'response': 200,
-                'time': time.ctime(time.time()),
-                'message': message
-            }
-        else:
-            srv_response = {
-                'response': 400,
-                'error': 'Bad request',
-                'time': time.ctime(time.time()),
-                'message': 'Сервер получил некорректные данные'
-            }
-        return srv_response
     
-
     while True:
         client, addr = sock.accept()
         data = client.recv(100000)

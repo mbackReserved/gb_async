@@ -4,6 +4,18 @@ import json
 import time
 
 
+def resp_from_server(srv_resp):
+    try:   
+        msg = srv_resp['message']
+        status_code = srv_resp['response']
+        print(f'Получено сообщение от сервера: "{msg}"')
+    except KeyError:
+         error = 'Не получены необходимые данные от сервера'
+         print(error)
+         return error
+    return status_code
+
+
 def main():
     try:
         srv_ip = sys.argv[1]
@@ -30,11 +42,6 @@ def main():
     msg_to_srv = msg_to_srv.encode('utf-8')
     sock.send(msg_to_srv)
 
-    def resp_from_server(srv_resp):
-        msg = srv_resp['message']
-        status_code = srv_resp['response']
-        print(f'Получено сообщение от сервера: "{msg}"')
-        return status_code
 
     try:
         data = sock.recv(100000)
