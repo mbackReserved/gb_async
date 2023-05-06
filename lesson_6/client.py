@@ -4,10 +4,12 @@ import json
 import time
 import logging
 import logs.client_log
+from decorators import log
 
 client_logger = logging.getLogger('client_log')
 
 
+@log
 def resp_from_server(srv_resp):
     try:   
         msg = srv_resp['message']
@@ -23,6 +25,7 @@ def resp_from_server(srv_resp):
     return status_code
 
 
+@log
 def main():
     try:
         srv_ip = sys.argv[1]

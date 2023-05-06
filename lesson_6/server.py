@@ -4,10 +4,12 @@ import json
 import time
 import logging
 import logs.server_log
+from decorators import log
 
 server_logger = logging.getLogger('server_log')
 
 
+@log
 def create_response_to_client(msg_from_client):
     if 'action' in msg_from_client and msg_from_client['action'] == 'presence' and 'time' in msg_from_client:
         if 'account_name' in msg_from_client['user']:
