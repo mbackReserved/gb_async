@@ -12,3 +12,23 @@
 2023-05-06 14:50:21,753 DEBUG decorators Зафиксировано обращение к функции create_response_to_client . Аргументы функции: ({'action': 'presence', 'time': 'Sat May  6 14:50:21 2023', 'user': {'account_name': 'Vadim'}},), {} 
 2023-05-06 14:50:21,753 DEBUG server Сервер отправил сообщение клиненту
 2023-05-06 14:50:21,753 DEBUG server Сервер ожидает следующего подключения
+2023-05-06 14:56:46,842 DEBUG server Сервер принял сообщение: 
+ {'action': 'presence', 'time': 'Sat May  6 14:56:46 2023', 'user': {'account_name': 'Vadim'}}
+2023-05-06 14:56:46,842 DEBUG decorators Зафиксировано обращение к функции create_response_to_client . Аргументы функции: ({'action': 'presence', 'time': 'Sat May  6 14:56:46 2023', 'user': {'account_name': 'Vadim'}},), {} 
+2023-05-06 14:56:46,842 DEBUG server Сервер отправил сообщение клиненту
+2023-05-06 14:56:46,842 DEBUG server Сервер ожидает следующего подключения
+2023-05-06 14:57:25,804 DEBUG server Сервер принял сообщение: 
+ {'action': 'presence', 'time': 'Sat May  6 14:57:25 2023', 'user': {'account_name': 'Vadim'}}
+2023-05-06 14:57:25,804 DEBUG decorators Зафиксировано обращение к функции create_response_to_client . Аргументы функции: ({'action': 'presence', 'time': 'Sat May  6 14:57:25 2023', 'user': {'account_name': 'Vadim'}},), {} 
+2023-05-06 14:57:25,805 DEBUG server Сервер отправил сообщение клиненту
+2023-05-06 14:57:25,805 DEBUG server Сервер ожидает следующего подключения
+2023-05-06 14:57:49,991 DEBUG server Сервер принял сообщение: 
+ {'action': 'presence', 'time': 'Sat May  6 14:57:49 2023', 'user': {'account_name': 'Vadim'}}
+2023-05-06 14:57:49,991 DEBUG decorators Зафиксировано обращение к функции create_response_to_client . Аргументы функции: ({'action': 'presence', 'time': 'Sat May  6 14:57:49 2023', 'user': {'account_name': 'Vadim'}},), {} 
+2023-05-06 14:57:49,991 DEBUG server Сервер отправил сообщение клиненту
+2023-05-06 14:57:49,991 DEBUG server Сервер ожидает следующего подключения
+2023-05-06 14:58:10,496 DEBUG server Сервер принял сообщение: 
+ {'action': 'presence', 'time': 'Sat May  6 14:58:10 2023', 'user': {'account_name': 'Vadim'}}
+2023-05-06 14:58:10,496 DEBUG decorators Зафиксировано обращение к функции create_response_to_client . Аргументы функции: ({'action': 'presence', 'time': 'Sat May  6 14:58:10 2023', 'user': {'account_name': 'Vadim'}},), {} 
+2023-05-06 14:58:10,496 DEBUG server Сервер отправил сообщение клиненту
+2023-05-06 14:58:10,496 DEBUG server Сервер ожидает следующего подключения

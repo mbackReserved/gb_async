@@ -4,10 +4,12 @@ import logs.server_log
 import sys
 
 
+print(sys.argv[0].find('client'))
+
 if sys.argv[0].find('client') == -1:
     logger = logging.getLogger('server_log')
 else:
-    logger = logging.getLogger('client-log')
+    logger = logging.getLogger('client_log')
 
 
 def log(func):
