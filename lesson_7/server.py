@@ -4,7 +4,9 @@ import json
 import time
 import logging
 import logs.server_log
+import select
 from decorators import log
+
 
 server_logger = logging.getLogger('server_log')
 
@@ -12,7 +14,10 @@ server_logger = logging.getLogger('server_log')
 @log
 def create_response_to_client(msg_from_client):
     if 'action' in msg_from_client and msg_from_client['action'] == 'presence' and 'time' in msg_from_client:
-        if 'account_name' in msg_from_client['user']:
+        if 'mes' in msg_from_client:
+            mes = msg_from_client['mes']
+            message = f'Message from another client to server: {mes}'
+        elif 'account_name' in msg_from_client['user']:
             account_name = msg_from_client['user']['account_name']
             message = f'Hello from server, {account_name}'
         else:
@@ -53,35 +58,59 @@ def main():
     
     sock = socket(AF_INET, SOCK_STREAM)
     sock.bind((srv_ip, srv_port))
+    sock.settimeout(0.2)
+
+    clients_list = []
+    messages_list = []
+
     sock.listen(5)
     # print('Сервер ожидает подключения')
     server_logger.debug('Сервер ожидает подключения')
 
     
     while True:
-        client, addr = sock.accept()
-        data = client.recv(100000)
-        dec_data = data.decode('utf-8')
-        js_data = json.loads(dec_data)
-        # print(f'Сервер принял сообщение: \n {js_data}')
-        server_logger.debug(f'Сервер принял сообщение: \n {js_data}')
-
+        try:
+            client, addr = sock.accept()
+        except OSError:
+            pass
+        else:
+            clients_list.append(client)
+        
+        to_read_list = []
+        to_send_list = []
+        errors_list = []
 
         try:
-            js_response = json.dumps(create_response_to_client(js_data))
-            enc_response = js_response.encode('utf-8')
-            client.send(enc_response)
-            # print('Сервер отправил сообщение клиненту')
-            server_logger.debug('Сервер отправил сообщение клиненту')
-            client.close()
-            # print('Сервер ожидает следующего подключения')
-            server_logger.debug('Сервер ожидает следующего подключения')
-        except (ValueError, json.JSONDecodeError):
-            # print('Принято некорретное сообщение от клиента.')
-            server_logger.error('Принято некорретное сообщение от клиента.')
-            client.close()
+            if clients_list:
+                to_read_list, to_send_list, errors_list = select.select(clients_list, clients_list, [], 0)
+        except OSError:
+            pass
 
 
+        if to_read_list:
+            for read_client in to_read_list:
+                try:
+                    data = client.recv(100000)
+                    dec_data = data.decode('utf-8')
+                    js_data = json.loads(dec_data)
+                    messages_list.append(create_response_to_client(js_data))
+                except:
+                    clients_list.remove(read_client)
+        
+        if messages_list and to_send_list:
+            message = {
+                'message': messages_list[0]['message'],
+                'response': messages_list[0]['response'],
+                'time': time.time(),
+            }
+            del messages_list[0]
+            for waiting_client in to_send_list:
+                try:
+                    js_response = json.dumps(message)
+                    enc_response = js_response.encode('utf-8')
+                    waiting_client.send(enc_response)
+                except:
+                    clients_list.remove(waiting_client)
 
 
 if __name__ == '__main__':

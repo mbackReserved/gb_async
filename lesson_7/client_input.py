@@ -48,23 +48,39 @@ def main():
         'time': time.ctime(time.time()),
         'user': {
             'account_name': 'Vadim'
-        }
+        },
+        'mes': input('Введите: ')
     }
-
-    msg_to_srv = json.dumps(msg_to_srv)
-    msg_to_srv = msg_to_srv.encode('utf-8')
-    sock.send(msg_to_srv)
-
+   
 
     try:
+        msg_to_srv = json.dumps(msg_to_srv)
+        msg_to_srv = msg_to_srv.encode('utf-8')
+        sock.send(msg_to_srv)
         data = sock.recv(100000)
         dec_data = data.decode('utf-8')
         js_data = json.loads(dec_data)
         resp_from_server(js_data)
-
-    except (ValueError, json.JSONDecodeError):
-        # print('Не удалось декодировать сообщение сервера.')
-        client_logger.error('Не удалось декодировать сообщение сервера.')
+    except:
+        sys.exit(1)
+    
+    else:
+        while True:
+            try:
+                msg_to_srv = {
+                    
+                    'action': 'presence',
+                    'time': time.ctime(time.time()),
+                    'user': {
+                        'account_name': 'Vadim'
+                    },
+                    'mes': input('Введите: ')
+                }
+                msg_to_srv = json.dumps(msg_to_srv)
+                msg_to_srv = msg_to_srv.encode('utf-8')
+                sock.send(msg_to_srv)
+            except:
+                sys.exit(1)
 
 
 if __name__ == '__main__':
