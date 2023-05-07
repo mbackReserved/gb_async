@@ -1,0 +1,61 @@
+2023-05-06 14:48:43,806 ERROR server Некорректно указаны порт и адрес. Присвоены стандартные значения. 
+ Порт: 7777
+, IP-адрес: 127.0.0.1
+2023-05-06 14:48:43,806 DEBUG server Сервер ожидает подключения
+2023-05-06 14:49:11,309 DEBUG server Сервер принял сообщение: 
+ {'action': 'presence', 'time': 'Sat May  6 14:49:11 2023', 'user': {'account_name': 'Vadim'}}
+2023-05-06 14:49:11,309 DEBUG decorators Зафиксировано обращение к функции create_response_to_client . Аргументы функции: ({'action': 'presence', 'time': 'Sat May  6 14:49:11 2023', 'user': {'account_name': 'Vadim'}},), {} 
+2023-05-06 14:49:11,309 DEBUG server Сервер отправил сообщение клиненту
+2023-05-06 14:49:11,310 DEBUG server Сервер ожидает следующего подключения
+2023-05-06 14:50:21,752 DEBUG server Сервер принял сообщение: 
+ {'action': 'presence', 'time': 'Sat May  6 14:50:21 2023', 'user': {'account_name': 'Vadim'}}
+2023-05-06 14:50:21,753 DEBUG decorators Зафиксировано обращение к функции create_response_to_client . Аргументы функции: ({'action': 'presence', 'time': 'Sat May  6 14:50:21 2023', 'user': {'account_name': 'Vadim'}},), {} 
+2023-05-06 14:50:21,753 DEBUG server Сервер отправил сообщение клиненту
+2023-05-06 14:50:21,753 DEBUG server Сервер ожидает следующего подключения
+2023-05-06 14:56:46,842 DEBUG server Сервер принял сообщение: 
+ {'action': 'presence', 'time': 'Sat May  6 14:56:46 2023', 'user': {'account_name': 'Vadim'}}
+2023-05-06 14:56:46,842 DEBUG decorators Зафиксировано обращение к функции create_response_to_client . Аргументы функции: ({'action': 'presence', 'time': 'Sat May  6 14:56:46 2023', 'user': {'account_name': 'Vadim'}},), {} 
+2023-05-06 14:56:46,842 DEBUG server Сервер отправил сообщение клиненту
+2023-05-06 14:56:46,842 DEBUG server Сервер ожидает следующего подключения
+2023-05-06 14:57:25,804 DEBUG server Сервер принял сообщение: 
+ {'action': 'presence', 'time': 'Sat May  6 14:57:25 2023', 'user': {'account_name': 'Vadim'}}
+2023-05-06 14:57:25,804 DEBUG decorators Зафиксировано обращение к функции create_response_to_client . Аргументы функции: ({'action': 'presence', 'time': 'Sat May  6 14:57:25 2023', 'user': {'account_name': 'Vadim'}},), {} 
+2023-05-06 14:57:25,805 DEBUG server Сервер отправил сообщение клиненту
+2023-05-06 14:57:25,805 DEBUG server Сервер ожидает следующего подключения
+2023-05-06 14:57:49,991 DEBUG server Сервер принял сообщение: 
+ {'action': 'presence', 'time': 'Sat May  6 14:57:49 2023', 'user': {'account_name': 'Vadim'}}
+2023-05-06 14:57:49,991 DEBUG decorators Зафиксировано обращение к функции create_response_to_client . Аргументы функции: ({'action': 'presence', 'time': 'Sat May  6 14:57:49 2023', 'user': {'account_name': 'Vadim'}},), {} 
+2023-05-06 14:57:49,991 DEBUG server Сервер отправил сообщение клиненту
+2023-05-06 14:57:49,991 DEBUG server Сервер ожидает следующего подключения
+2023-05-06 14:58:10,496 DEBUG server Сервер принял сообщение: 
+ {'action': 'presence', 'time': 'Sat May  6 14:58:10 2023', 'user': {'account_name': 'Vadim'}}
+2023-05-06 14:58:10,496 DEBUG decorators Зафиксировано обращение к функции create_response_to_client . Аргументы функции: ({'action': 'presence', 'time': 'Sat May  6 14:58:10 2023', 'user': {'account_name': 'Vadim'}},), {} 
+2023-05-06 14:58:10,496 DEBUG server Сервер отправил сообщение клиненту
+2023-05-06 14:58:10,496 DEBUG server Сервер ожидает следующего подключения
+2023-05-06 15:01:09,045 DEBUG server Сервер принял сообщение: 
+ {'action': 'presence', 'time': 'Sat May  6 15:01:09 2023', 'user': {'account_name': 'Vadim'}}
+2023-05-06 15:01:09,045 DEBUG decorators Зафиксировано обращение к функции create_response_to_client . Аргументы функции: ({'action': 'presence', 'time': 'Sat May  6 15:01:09 2023', 'user': {'account_name': 'Vadim'}},), {} 
+2023-05-06 15:01:09,045 DEBUG server Сервер отправил сообщение клиненту
+2023-05-06 15:01:09,045 DEBUG server Сервер ожидает следующего подключения
+2023-05-06 15:02:00,848 ERROR server Некорректно указаны порт и адрес. Присвоены стандартные значения. 
+ Порт: 7777
+, IP-адрес: 127.0.0.1
+2023-05-06 15:02:40,682 ERROR server Некорректно указаны порт и адрес. Присвоены стандартные значения. 
+ Порт: 7777
+, IP-адрес: 127.0.0.1
+2023-05-06 15:02:40,682 DEBUG server Сервер ожидает подключения
+2023-05-06 15:03:00,072 DEBUG server Сервер принял сообщение: 
+ {'action': 'presence', 'time': 'Sat May  6 15:03:00 2023', 'user': {'account_name': 'Vadim'}}
+2023-05-06 15:03:00,074 DEBUG decorators Зафиксировано обращение к функции create_response_to_client . Аргументы функции: ({'action': 'presence', 'time': 'Sat May  6 15:03:00 2023', 'user': {'account_name': 'Vadim'}},), {} . Вызов осуществлен из функции main
+2023-05-06 15:03:00,074 DEBUG server Сервер отправил сообщение клиненту
+2023-05-06 15:03:00,074 DEBUG server Сервер ожидает следующего подключения
+2023-05-06 15:07:43,970 ERROR server Некорректно указаны порт и адрес. Присвоены стандартные значения. 
+ Порт: 7777
+, IP-адрес: 127.0.0.1
+2023-05-06 15:07:43,970 DEBUG server Сервер ожидает подключения
+2023-05-06 15:07:50,183 DEBUG server Сервер принял сообщение: 
+ {'action': 'presence', 'time': 'Sat May  6 15:07:50 2023', 'user': {'account_name': 'Vadim'}}
+2023-05-06 15:07:50,183 DEBUG decorators Зафиксировано обращение к функции create_response_to_client . Аргументы функции: ({'action': 'presence', 'time': 'Sat May  6 15:07:50 2023', 'user': {'account_name': 'Vadim'}},), {}.
+2023-05-06 15:07:50,185 DEBUG decorators Вызов осуществлен из функции main
+2023-05-06 15:07:50,185 DEBUG server Сервер отправил сообщение клиненту
+2023-05-06 15:07:50,185 DEBUG server Сервер ожидает следующего подключения
