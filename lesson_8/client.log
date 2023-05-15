@@ -341,3 +341,54 @@
 2023-05-07 17:57:36,240 DEBUG decorators Зафиксировано обращение к функции resp_from_server . Аргументы функции: ({'message': 'Message from another client to server: hi', 'response': 200, 'time': 1683471456.2405455},), {}.
 2023-05-07 17:57:36,241 DEBUG decorators Вызов осуществлен из функции main
 2023-05-07 17:57:36,243 DEBUG decorators Вызов осуществлен из функции main
+2023-05-15 06:24:50,157 ERROR client_input Некорректно указаны порт и адрес. Присвоены стандартные значения. 
+ Порт: 7777
+, IP-адрес: 127.0.0.1
+2023-05-15 06:24:50,158 INFO client_input Соединение с сервером установлено
+2023-05-15 06:25:11,907 ERROR client_listener Некорректно указаны порт и адрес. Присвоены стандартные значения. 
+ Порт: 7777
+, IP-адрес: 127.0.0.1
+2023-05-15 06:25:11,907 INFO client_listener Соединение с сервером установлено
+2023-05-15 06:25:12,111 DEBUG client_listener Получено сообщение от сервера: "Hello from server, Vadim"
+2023-05-15 06:25:12,111 DEBUG decorators Зафиксировано обращение к функции resp_from_server . Аргументы функции: ({'message': 'Hello from server, Vadim', 'response': 200, 'time': 1684121112.1113696},), {}.
+2023-05-15 06:25:12,115 DEBUG decorators Вызов осуществлен из функции main
+2023-05-15 06:25:18,300 DEBUG client_input Получено сообщение от сервера: "Hello from server, Vadim"
+2023-05-15 06:25:18,301 DEBUG decorators Зафиксировано обращение к функции resp_from_server . Аргументы функции: ({'message': 'Hello from server, Vadim', 'response': 200, 'time': 1684121112.1113696},), {}.
+2023-05-15 06:25:18,305 DEBUG decorators Вызов осуществлен из функции main
+2023-05-15 06:26:11,903 ERROR client_listener Некорректно указаны порт и адрес. Присвоены стандартные значения. 
+ Порт: 7777
+, IP-адрес: 127.0.0.1
+2023-05-15 06:26:11,904 INFO client_listener Соединение с сервером установлено
+2023-05-15 06:26:12,105 DEBUG client_listener Получено сообщение от сервера: "Hello from server, Vadim"
+2023-05-15 06:26:12,105 DEBUG decorators Зафиксировано обращение к функции resp_from_server . Аргументы функции: ({'message': 'Hello from server, Vadim', 'response': 200, 'time': 1684121172.104854},), {}.
+2023-05-15 06:26:12,108 DEBUG decorators Вызов осуществлен из функции main
+2023-05-15 06:26:16,589 ERROR client_input Некорректно указаны порт и адрес. Присвоены стандартные значения. 
+ Порт: 7777
+, IP-адрес: 127.0.0.1
+2023-05-15 06:26:16,589 INFO client_input Соединение с сервером установлено
+2023-05-15 06:26:19,395 DEBUG client_input Получено сообщение от сервера: "Message from another client to server: 3"
+2023-05-15 06:26:19,395 DEBUG client_listener Получено сообщение от сервера: "Message from another client to server: 3"
+2023-05-15 06:26:19,395 DEBUG decorators Зафиксировано обращение к функции resp_from_server . Аргументы функции: ({'message': 'Message from another client to server: 3', 'response': 200, 'time': 1684121179.3953102},), {}.
+2023-05-15 06:26:19,395 DEBUG decorators Зафиксировано обращение к функции resp_from_server . Аргументы функции: ({'message': 'Message from another client to server: 3', 'response': 200, 'time': 1684121179.3953102},), {}.
+2023-05-15 06:26:19,395 DEBUG decorators Вызов осуществлен из функции main
+2023-05-15 06:26:19,398 DEBUG decorators Вызов осуществлен из функции main
+2023-05-15 06:26:36,828 DEBUG client_listener Получено сообщение от сервера: "Message from another client to server: hello another client"
+2023-05-15 06:26:36,828 DEBUG decorators Зафиксировано обращение к функции resp_from_server . Аргументы функции: ({'message': 'Message from another client to server: hello another client', 'response': 200, 'time': 1684121196.8282092},), {}.
+2023-05-15 06:26:36,828 DEBUG decorators Вызов осуществлен из функции main
+2023-05-15 06:32:21,639 ERROR client_listener Некорректно указаны порт и адрес. Присвоены стандартные значения. 
+ Порт: 7777
+, IP-адрес: 127.0.0.1
+2023-05-15 06:32:21,639 INFO client_listener Соединение с сервером установлено
+2023-05-15 06:32:21,843 DEBUG client_listener Получено сообщение от сервера: "Hello from server, Vadim"
+2023-05-15 06:32:21,844 DEBUG decorators Зафиксировано обращение к функции resp_from_server . Аргументы функции: ({'message': 'Hello from server, Vadim', 'response': 200, 'time': 1684121541.8437886},), {}.
+2023-05-15 06:32:21,847 DEBUG decorators Вызов осуществлен из функции main
+2023-05-15 06:32:25,628 ERROR client_input Некорректно указаны порт и адрес. Присвоены стандартные значения. 
+ Порт: 7777
+, IP-адрес: 127.0.0.1
+2023-05-15 06:32:25,628 INFO client_input Соединение с сервером установлено
+2023-05-15 06:32:28,633 DEBUG client_listener Получено сообщение от сервера: "Message from another client to server: ff"
+2023-05-15 06:32:28,633 DEBUG client_input Получено сообщение от сервера: "Message from another client to server: ff"
+2023-05-15 06:32:28,633 DEBUG decorators Зафиксировано обращение к функции resp_from_server . Аргументы функции: ({'message': 'Message from another client to server: ff', 'response': 200, 'time': 1684121548.6334586},), {}.
+2023-05-15 06:32:28,633 DEBUG decorators Зафиксировано обращение к функции resp_from_server . Аргументы функции: ({'message': 'Message from another client to server: ff', 'response': 200, 'time': 1684121548.6334586},), {}.
+2023-05-15 06:32:28,633 DEBUG decorators Вызов осуществлен из функции main
+2023-05-15 06:32:28,636 DEBUG decorators Вызов осуществлен из функции main

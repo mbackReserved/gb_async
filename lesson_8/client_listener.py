@@ -25,6 +25,24 @@ def resp_from_server(srv_resp):
     return status_code
 
 
+def send_message_to_server(sock):
+    msg_to_srv = {
+        'action': 'presence',
+        'time': time.ctime(time.time()),
+        'user': {
+            'account_name': 'Vadim'
+        }
+    }
+
+    msg_to_srv = json.dumps(msg_to_srv)
+    msg_to_srv = msg_to_srv.encode('utf-8')
+    sock.send(msg_to_srv)
+    data = sock.recv(100000)
+
+    return data
+
+
+
 @log
 def main():
     try:
@@ -41,23 +59,10 @@ def main():
     sock.connect((srv_ip, srv_port))
     # print('Соединение с сервером установлено')
     client_logger.info('Соединение с сервером установлено')
-    
-
-    msg_to_srv = {
-        'action': 'presence',
-        'time': time.ctime(time.time()),
-        'user': {
-            'account_name': 'Vadim'
-        }
-    }
-
 
 
     try:
-        msg_to_srv = json.dumps(msg_to_srv)
-        msg_to_srv = msg_to_srv.encode('utf-8')
-        sock.send(msg_to_srv)
-        data = sock.recv(100000)
+        data = send_message_to_server(sock)
         dec_data = data.decode('utf-8')
         js_data = json.loads(dec_data)
         resp_from_server(js_data)
