@@ -5,6 +5,7 @@ import time
 import logging
 import logs.client_log
 from decorators import log
+import threading
 
 client_logger = logging.getLogger('client_log')
 
@@ -26,21 +27,22 @@ def resp_from_server(srv_resp):
 
 
 def send_message_to_server(sock):
-    msg_to_srv = {
-        'action': 'presence',
-        'time': time.ctime(time.time()),
-        'user': {
-            'account_name': 'Vadim'
-        },
-        'mes': input('Введите: ')
-    }
+    while True:
+        msg_to_srv = {
+            'action': 'presence',
+            'time': time.ctime(time.time()),
+            'user': {
+                'account_name': 'Vadim'
+            },
+            'mes': input('Введите: ')
+        }
 
-    msg_to_srv = json.dumps(msg_to_srv)
-    msg_to_srv = msg_to_srv.encode('utf-8')
-    sock.send(msg_to_srv)
-    data = sock.recv(100000)
+        msg_to_srv = json.dumps(msg_to_srv)
+        msg_to_srv = msg_to_srv.encode('utf-8')
+        sock.send(msg_to_srv)
+        #data = sock.recv(100000)
 
-    return data
+        #return data
 
 
 
@@ -64,19 +66,22 @@ def main():
    
 
     try:
-        data = send_message_to_server(sock)
-        dec_data = data.decode('utf-8')
+        send_message_to_server(sock)
+        dec_data = sock.recv(100000).decode('utf-8')
         js_data = json.loads(dec_data)
         resp_from_server(js_data)
     except:
         sys.exit(1)
     
     else:
+        receiver = threading.Thread(target=send_message_to_server, args=(sock, ), daemon=True)
+        receiver.start()
+
         while True:
-            try:
-                send_message_to_server(sock)
-            except:
-                sys.exit(1)
+            time.sleep(1)
+            if receiver.is_alive():
+                continue
+            break
 
 
 if __name__ == '__main__':
