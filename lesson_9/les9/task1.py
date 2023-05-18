@@ -3,6 +3,7 @@ import subprocess
 
 
 def host_ping(ip_array):
+    arr_for_tabulate = {'Доступные узлы': '', 'Недоступные узлы': ''}
     for ip in ip_array:
         try:
             ip_address = ipaddress.ip_address(ip)
@@ -11,8 +12,12 @@ def host_ping(ip_array):
         new_proc = subprocess.call(['ping', '-c', '2', ip], shell=False, stdout=subprocess.PIPE)
         if new_proc:
             print(f'{ip} - Узел недоступен')
+            arr_for_tabulate['Недоступные узлы'] += f'{str(ip)}\n'
         else:
             print(f'{ip} - Узел доступен')
+            arr_for_tabulate['Доступные узлы'] += f'{str(ip)}\n'
+        
+    return arr_for_tabulate
         
 
 if __name__ == '__main__':
