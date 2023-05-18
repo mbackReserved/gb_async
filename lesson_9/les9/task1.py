@@ -16,5 +16,5 @@ def host_ping(ip_array):
         
 
 if __name__ == '__main__':
-    ip_addrs = ['youtube.com', 'gb.ru', '16.10.24.154']
+    ip_addrs = ['youtube.com', 'gb.ru', '16.10.24.154', '192.168.1.5']
     host_ping(ip_addrs)
